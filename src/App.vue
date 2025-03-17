@@ -24,6 +24,10 @@ setInterval(miningService.autoCheese, 3000)
   
   return AppState.cheese 
  })
+ const amountPerClick = computed(()=> {
+  const click = clickUpgrades.value.forEach(upgrade => upgrade.bonus += upgrade.quantity)
+  return click
+ } )
 
 </script>
 
@@ -53,7 +57,7 @@ setInterval(miningService.autoCheese, 3000)
             <div class="fw-bold py-4">{{ upgrade.name }}</div>
             <div>Price: ${{ upgrade.price }} </div>
             <div>QTY: {{ upgrade.quantity }} </div>
-            <div>Amount mined per click: {{ upgrade.amount }}</div>
+            <div>Amount mined per click: {{ amountPerClick }}</div>
             <button v-if="AppState.cheese >= upgrade.price" @click="buyClickUpgrade(upgrade)" class="btn mt-3 btn-warning">Purchase {{ upgrade.name}}</button>
           </div>
           <div v-for="upgrade in autoUpgrades" :key="upgrade.name" class="text-center bg-success rounded m-2 p-3">
