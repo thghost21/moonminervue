@@ -20,6 +20,13 @@ setInterval(miningService.autoCheese, 3000)
  const cheese = computed(()=> AppState.cheese)
  const clickUpgrades = computed(()=> AppState.clickUpgrades)
  const autoUpgrades = computed(()=> AppState.autoUpgrades)
+ const testComp = computed(()=>{
+  
+  return AppState.cheese 
+ })
+ 
+
+)
 
 </script>
 
@@ -34,6 +41,7 @@ setInterval(miningService.autoCheese, 3000)
       <div class="col-12 d-flex justify-content-center">
         <div class=" bg-dark text-light rounded p-2 my-3 ">
           <span>{{ cheese }}</span>
+          <span>{{ testComp }}</span>
 
         </div>
       </div>
@@ -44,16 +52,20 @@ setInterval(miningService.autoCheese, 3000)
       <div class="col-12 ">
         <div class="d-flex  justify-content-between">
           <div v-for="upgrade in clickUpgrades" :key="upgrade.name" class="text-center bg-primary rounded m-2 p-3">
-            <button @click="buyClickUpgrade(upgrade)" class="btn btn-warning">Purchase {{ upgrade.name}}</button>
+            <h2>{{ upgrade.emoji }}</h2>
+            <div class="fw-bold py-4">{{ upgrade.name }}</div>
             <div>Price: ${{ upgrade.price }} </div>
             <div>QTY: {{ upgrade.quantity }} </div>
-            <div>Amount mined per click: {{ upgrade.amount }}</div>
+            <div>Amount mined per click: {{ cheesePerClick }}</div>
+            <button v-if="AppState.cheese >= upgrade.price" @click="buyClickUpgrade(upgrade)" class="btn mt-3 btn-warning">Purchase {{ upgrade.name}}</button>
           </div>
           <div v-for="upgrade in autoUpgrades" :key="upgrade.name" class="text-center bg-success rounded m-2 p-3">
-            <button @click="buyAutoUpgrade(upgrade)" class="btn btn-warning">Purchase {{ upgrade.name}}</button>
+            <h2>{{ upgrade.emoji }}</h2>
+            <div class="fw-bold py-4">{{ upgrade.name }}</div>
             <div>Price: ${{ upgrade.price }} </div>
             <div>QTY: {{ upgrade.quantity }} </div>
             <div>Amount mined per cycle: {{ upgrade.amount }}</div>
+            <button v-if="AppState.cheese >= upgrade.price" @click="buyAutoUpgrade(upgrade)" class="btn mt-3 btn-warning">Purchase {{ upgrade.name}}</button>
           </div>
         </div>
       </div>

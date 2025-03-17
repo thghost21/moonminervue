@@ -13,18 +13,21 @@ export const AppState = reactive({
     {
       name: 'pickaxe',
       price: 5,
-      quantity: 1,
+      quantity: 10,
       bonus: 1,
       id: 1,
       amount: 1,
+      emoji: '⛏️',
     },
     {
       name: 'drill',
       price: 20,
-      quantity: 0,
+      quantity: 5,
       bonus: 5,
       id: 2,
       amount: 0,
+      emoji: '🪛',
+
 
     },
   ],
@@ -36,6 +39,8 @@ export const AppState = reactive({
       bonus: 50,
       id: 3,
       amount: 0,
+      emoji: '🧑‍🚀',
+
 
     },
     {
@@ -45,6 +50,8 @@ export const AppState = reactive({
       bonus: 100,
       id: 4,
       amount: 0,
+      emoji: '🛰️',
+
     },
   ]
 })

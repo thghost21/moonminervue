@@ -5,6 +5,7 @@ export class Upgrade {
     this.quantity = data.quantity
     this.bonus = data.bonus
     this.id = data.id
-    this.ammount = 1
+    this.amount = 1
+    this.emoji = data.emoji
   }
 }
