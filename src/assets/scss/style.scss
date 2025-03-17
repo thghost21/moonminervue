@@ -1,0 +1,19 @@
+@import '_main.scss';
+
+#app {
+
+
+  min-height: 100dvh;
+}
+
+main {
+  flex-grow: 1;
+
+}
+
+#pop-toast-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: end;
+}
