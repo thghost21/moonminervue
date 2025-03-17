@@ -13,7 +13,7 @@ export const AppState = reactive({
     {
       name: 'pickaxe',
       price: 5,
-      quantity: 10,
+      quantity: 1,
       bonus: 1,
       id: 1,
       amount: 1,
@@ -22,7 +22,7 @@ export const AppState = reactive({
     {
       name: 'drill',
       price: 20,
-      quantity: 5,
+      quantity: 0,
       bonus: 5,
       id: 2,
       amount: 0,

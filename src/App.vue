@@ -24,9 +24,6 @@ setInterval(miningService.autoCheese, 3000)
   
   return AppState.cheese 
  })
- 
-
-)
 
 </script>
 
@@ -41,7 +38,7 @@ setInterval(miningService.autoCheese, 3000)
       <div class="col-12 d-flex justify-content-center">
         <div class=" bg-dark text-light rounded p-2 my-3 ">
           <span>{{ cheese }}</span>
-          <span>{{ testComp }}</span>
+          <!-- <span>{{ testComp }}</span> -->
 
         </div>
       </div>
@@ -56,7 +53,7 @@ setInterval(miningService.autoCheese, 3000)
             <div class="fw-bold py-4">{{ upgrade.name }}</div>
             <div>Price: ${{ upgrade.price }} </div>
             <div>QTY: {{ upgrade.quantity }} </div>
-            <div>Amount mined per click: {{ cheesePerClick }}</div>
+            <div>Amount mined per click: {{ upgrade.amount }}</div>
             <button v-if="AppState.cheese >= upgrade.price" @click="buyClickUpgrade(upgrade)" class="btn mt-3 btn-warning">Purchase {{ upgrade.name}}</button>
           </div>
           <div v-for="upgrade in autoUpgrades" :key="upgrade.name" class="text-center bg-success rounded m-2 p-3">
